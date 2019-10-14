@@ -1,0 +1,63 @@
+// Container
+$container-max: 1920px;
+$container: 1640px;
+$container-desktop-huge: 1440px;
+$container-desktop-large: 1292px;
+$container-desktop-medium: 1180px;
+$container-desktop-base: 1092px;
+$container-desktop: 1040px;
+$container-desktop-small: 940px;
+$container-desktop-extra-small: 860px;
+$container-tablet: 700px;
+$container-table-small: 576px;
+$gutter-width: 20px; // 32px (16px on each side of a container)
+
+@mixin container {
+  width: 100%;
+  padding-left: $gutter-width;
+  padding-right: $gutter-width;
+
+  @include min-desktop-huge {
+    max-width: $container;
+  }
+
+  @include desktop-huge-only {
+    max-width: $container-desktop-huge;
+  }
+
+  @include desktop-large-only {
+    max-width: $container-desktop-large;
+  }
+
+  @include desktop-medium-only {
+    max-width: $container-desktop-medium;
+  }
+
+  @include desktop-base-only {
+    max-width: $container-desktop-base;
+  }
+
+  @include desktop-only {
+    max-width: $container-desktop;
+  }
+
+  @include desktop-small-only {
+    max-width: $container-desktop-small;
+  }
+
+  @include desktop-extra-small-only {
+    max-width: $container-desktop-extra-small;
+  }
+
+  @include tablet-only {
+    max-width: $container-tablet;
+  }
+
+  @include tablet-small-only {
+    max-width: $container-table-small;
+  }
+
+  @include min-mobile {
+    @include push--auto;
+  }
+}
